@@ -15,7 +15,7 @@ const DinnerList = () => {
 
 	const fetchDinners = async () => {
 		try {
-			const response = await axios.get("http://localhost:5050/api/dinners");
+			const response = await axios.get("https://dinner-list-server.onrender.com/api/dinners");
 			setDinners(response.data);
 		} catch (err) {
 			console.error("Error fetching dinners:", err);
@@ -37,7 +37,7 @@ const DinnerList = () => {
 
 			try {
 				// Send POST request to add the new dinner
-				await axios.post("http://localhost:5050/api/dinners", dinnerToAdd);
+				await axios.post("https://dinner-list-server.onrender.com/api/dinners", dinnerToAdd);
 				fetchDinners(); // Fetch updated dinners list after adding
 				setNewDinner({ name: "", ingredients: "" }); // Clear the form
 			} catch (err) {
@@ -68,7 +68,7 @@ const DinnerList = () => {
 	// Handle dinner deletion
 	const handleDelete = async (id) => {
 		try {
-			await axios.delete(`http://localhost:5050/api/dinners/${id}`);
+			await axios.delete(`https://dinner-list-server.onrender.com/api/dinners/${id}`);
 			fetchDinners(); // Fetch updated dinners list after deletion
 		} catch (err) {
 			console.error("Error deleting dinner:", err);
