@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 5050;
 const app = express();
 
 const corsOptions = {
-	origin: "http://localhost:3000", // frontend URI (ReactJS)
+	origin: "https://dinner-list-client.onrender.com", // frontend URI (ReactJS)
 };
 
 app.use(cors(corsOptions));
